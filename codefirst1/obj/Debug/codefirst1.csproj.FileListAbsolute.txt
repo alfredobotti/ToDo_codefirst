@@ -26,3 +26,17 @@ C:\Users\Utente\Desktop\repository GIT\codefirst1\obj\Debug\codefirst1.csproj.Co
 C:\Users\Utente\Desktop\repository GIT\codefirst1\obj\Debug\codefirst1.csproj.CopyComplete
 C:\Users\Utente\Desktop\repository GIT\codefirst1\obj\Debug\codefirst1.exe
 C:\Users\Utente\Desktop\repository GIT\codefirst1\obj\Debug\codefirst1.pdb
+C:\Users\albotti\Desktop\repository git\ToDo_codefirst\codefirst1\bin\Debug\codefirst1.exe.config
+C:\Users\albotti\Desktop\repository git\ToDo_codefirst\codefirst1\bin\Debug\codefirst1.exe
+C:\Users\albotti\Desktop\repository git\ToDo_codefirst\codefirst1\bin\Debug\codefirst1.pdb
+C:\Users\albotti\Desktop\repository git\ToDo_codefirst\codefirst1\bin\Debug\EntityFramework.dll
+C:\Users\albotti\Desktop\repository git\ToDo_codefirst\codefirst1\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\albotti\Desktop\repository git\ToDo_codefirst\codefirst1\bin\Debug\EntityFramework.xml
+C:\Users\albotti\Desktop\repository git\ToDo_codefirst\codefirst1\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\albotti\Desktop\repository git\ToDo_codefirst\codefirst1\obj\Debug\codefirst1.csprojAssemblyReference.cache
+C:\Users\albotti\Desktop\repository git\ToDo_codefirst\codefirst1\obj\Debug\codefirst1.csproj.CoreCompileInputs.cache
+C:\Users\albotti\Desktop\repository git\ToDo_codefirst\codefirst1\obj\Debug\codefirst1.csproj.CopyComplete
+C:\Users\albotti\Desktop\repository git\ToDo_codefirst\codefirst1\obj\Debug\codefirst1.exe
+C:\Users\albotti\Desktop\repository git\ToDo_codefirst\codefirst1\obj\Debug\codefirst1.pdb
+C:\Users\albotti\Desktop\repository git\ToDo_codefirst\codefirst1\obj\Debug\codefirst1.Migrations.firstmigration.resources
+C:\Users\albotti\Desktop\repository git\ToDo_codefirst\codefirst1\obj\Debug\codefirst1.csproj.GenerateResource.cache

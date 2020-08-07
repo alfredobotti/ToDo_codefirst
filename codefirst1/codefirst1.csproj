@@ -53,11 +53,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\202007301317266_firstmigration.cs" />
-    <Compile Include="Migrations\202007301317266_firstmigration.designer.cs">
-      <DependentUpon>202007301317266_firstmigration.cs</DependentUpon>
+    <Compile Include="Migrations\202008061501116_firstmigration.cs" />
+    <Compile Include="Migrations\202008061501116_firstmigration.designer.cs">
+      <DependentUpon>202008061501116_firstmigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Migrations\models\E_ProjectItem.cs" />
+    <Compile Include="Migrations\models\E_Risorsa.cs" />
+    <Compile Include="Migrations\models\E_Task.cs" />
+    <Compile Include="Migrations\models\ToDocodefirstEntities.cs" />
+    <Compile Include="Migrations\models\T_CategoriaProjectItem.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -66,8 +71,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202007301317266_firstmigration.resx">
-      <DependentUpon>202007301317266_firstmigration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202008061501116_firstmigration.resx">
+      <DependentUpon>202008061501116_firstmigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

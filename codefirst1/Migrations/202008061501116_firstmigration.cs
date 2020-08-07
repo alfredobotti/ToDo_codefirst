@@ -19,7 +19,7 @@
                         DataUltimoAggiornamento = c.DateTime(nullable: false),
                     })
                 .PrimaryKey(t => t.ID_ProjectItem)
-                .ForeignKey("dbo.T_CategoriaProjectItem", t => t.ID_CategoriaProjectItem, cascadeDelete: true)
+                .ForeignKey("dbo.T_CategoriaProjectItem", t => t.ID_CategoriaProjectItem)
                 .Index(t => t.ID_CategoriaProjectItem);
             
             CreateTable(
@@ -38,13 +38,13 @@
                 "dbo.E_Risorsa",
                 c => new
                     {
-                        ID_Risorsa = c.Int(nullable: false, identity: true),
-                        MatricolaRisorsa = c.String(),
-                        Cognome = c.String(),
-                        Nome = c.String(),
-                        Mail = c.String(),
-                        Telefono = c.String(),
-                        Cellulare = c.String(),
+                        ID_Risorsa = c.Int(nullable: false),
+                        MatricolaRisorsa = c.String(nullable: false, maxLength: 10),
+                        Cognome = c.String(maxLength: 100),
+                        Nome = c.String(maxLength: 100),
+                        Mail = c.String(maxLength: 100),
+                        Telefono = c.String(maxLength: 50),
+                        Cellulare = c.String(maxLength: 50),
                     })
                 .PrimaryKey(t => t.ID_Risorsa);
             
@@ -53,7 +53,7 @@
                 c => new
                     {
                         ID_Task = c.Int(nullable: false, identity: true),
-                        Titolo = c.String(),
+                        Titolo = c.String(nullable: false, maxLength: 200),
                         Descrizione = c.String(),
                         ID_ParentTask = c.Int(),
                         DataInserimento = c.DateTime(nullable: false),
@@ -64,31 +64,31 @@
                 .Index(t => t.ID_ParentTask);
             
             CreateTable(
-                "dbo.E_TaskE_Risorsa",
+                "dbo.A_Risorsa_Task",
                 c => new
                     {
-                        E_Task_ID_Task = c.Int(nullable: false),
-                        E_Risorsa_ID_Risorsa = c.Int(nullable: false),
+                        ID_RISORSA = c.Int(nullable: false),
+                        ID_TASK = c.Int(nullable: false),
                     })
-                .PrimaryKey(t => new { t.E_Task_ID_Task, t.E_Risorsa_ID_Risorsa })
-                .ForeignKey("dbo.E_Task", t => t.E_Task_ID_Task, cascadeDelete: true)
-                .ForeignKey("dbo.E_Risorsa", t => t.E_Risorsa_ID_Risorsa, cascadeDelete: true)
-                .Index(t => t.E_Task_ID_Task)
-                .Index(t => t.E_Risorsa_ID_Risorsa);
+                .PrimaryKey(t => new { t.ID_RISORSA, t.ID_TASK })
+                .ForeignKey("dbo.E_Risorsa", t => t.ID_RISORSA, cascadeDelete: true)
+                .ForeignKey("dbo.E_Task", t => t.ID_TASK, cascadeDelete: true)
+                .Index(t => t.ID_RISORSA)
+                .Index(t => t.ID_TASK);
             
         }
         
         public override void Down()
         {
+            DropForeignKey("dbo.A_Risorsa_Task", "ID_TASK", "dbo.E_Task");
+            DropForeignKey("dbo.A_Risorsa_Task", "ID_RISORSA", "dbo.E_Risorsa");
             DropForeignKey("dbo.E_Task", "ID_ParentTask", "dbo.E_Task");
-            DropForeignKey("dbo.E_TaskE_Risorsa", "E_Risorsa_ID_Risorsa", "dbo.E_Risorsa");
-            DropForeignKey("dbo.E_TaskE_Risorsa", "E_Task_ID_Task", "dbo.E_Task");
             DropForeignKey("dbo.E_ProjectItem", "ID_CategoriaProjectItem", "dbo.T_CategoriaProjectItem");
-            DropIndex("dbo.E_TaskE_Risorsa", new[] { "E_Risorsa_ID_Risorsa" });
-            DropIndex("dbo.E_TaskE_Risorsa", new[] { "E_Task_ID_Task" });
+            DropIndex("dbo.A_Risorsa_Task", new[] { "ID_TASK" });
+            DropIndex("dbo.A_Risorsa_Task", new[] { "ID_RISORSA" });
             DropIndex("dbo.E_Task", new[] { "ID_ParentTask" });
             DropIndex("dbo.E_ProjectItem", new[] { "ID_CategoriaProjectItem" });
-            DropTable("dbo.E_TaskE_Risorsa");
+            DropTable("dbo.A_Risorsa_Task");
             DropTable("dbo.E_Task");
             DropTable("dbo.E_Risorsa");
             DropTable("dbo.T_CategoriaProjectItem");
